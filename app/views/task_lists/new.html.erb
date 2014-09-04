@@ -2,26 +2,24 @@
 
 <%= form_for @task_list, html: {class: "create"} do |f| %>
 
-    <div class="errors">
-      <% if @task_list.errors.any? %>
-      <ul>
-        <% @task_list.errors.full_messages.each do |message| %>
-          <%= message %>
-          </ul>
-          </div>
-        <% end %>
-
-  <% end %>
-
-  <div class="container">
-    <%= f.label :name %>
-   <br>
-    <%= f.text_field :name, autofocus: true %>
+  <div class="errors">
+    <% if @task_list.errors.any? %>
+      <% @task_list.errors.full_messages.each do |message| %>
+        <%= message %>
   </div>
+      <% end %>
 
-  <div class="container">
-    <%= f.submit "Create Task List" %>
-  </div>
-  <br>
+    <% end %>
+
+    <div class="container">
+      <%= f.label :name %>
+      <br>
+      <%= f.text_field :name, autofocus: true %>
+    </div>
+
+    <div class="container">
+      <%= f.submit "Create Task List" %>
+    </div>
+    <br>
 <% end %>
 

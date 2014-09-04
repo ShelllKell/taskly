@@ -15,7 +15,7 @@
 
     <div class="left"><h1><%= link_to "#{task_list.name}", "/task_lists/#{task_list.id}" %></h1></div>
     <div class="right"><%= link_to "Edit", "/task_lists/#{task_list.id}/edit" %>
-    <%= link_to "+ Add Task", "/task_lists/#{task_list.id}/tasks/new" %></div>
+      <%= link_to "+ Add Task", "/task_lists/#{task_list.id}/tasks/new" %></div>
 
     <% task_list.tasks.each do |task| %>
       <div class="left"><p><%= task.task %> (<%= distance_of_time_in_words(task.due_date, Time.now) %>)</p></div>
